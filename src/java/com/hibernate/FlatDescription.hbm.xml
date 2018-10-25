@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2016 1:10:49 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.FlatDescription" table="`flat-description`" catalog="sunshine_group">
+        <id name="flatDescriptionId" type="java.lang.Integer">
+            <column name="flat_description_id" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="flatSize" type="java.lang.Double">
+            <column name="`flat-size`" precision="22" scale="0" />
+        </property>
+        <property name="totalRoom" type="java.lang.Integer">
+            <column name="total_room" />
+        </property>
+        <property name="bedRoom" type="java.lang.Integer">
+            <column name="bed_room" />
+        </property>
+        <property name="corridor" type="java.lang.Integer">
+            <column name="corridor" />
+        </property>
+        <property name="washroom" type="java.lang.Integer">
+            <column name="washroom" />
+        </property>
+        <property name="attachedWashroom" type="java.lang.Integer">
+            <column name="attached_washroom" />
+        </property>
+        <property name="parking" type="string">
+            <column name="parking" length="45" />
+        </property>
+        <property name="facing" type="string">
+            <column name="facing" length="45" />
+        </property>
+        <property name="unit" type="java.lang.Integer">
+            <column name="unit" />
+        </property>
+        <property name="landArea" type="java.lang.Double">
+            <column name="land_area" precision="22" scale="0" />
+        </property>
+        <property name="flatStatus" type="string">
+            <column name="flat_status" length="45" />
+        </property>
+        <set name="flatInformations" table="flat_information" inverse="true" lazy="true" cascade="all" fetch="select">
+            <key>
+                <column name="flat_description_id" />
+            </key>
+            <one-to-many class="com.hibernate.FlatInformation" />
+        </set>
+        <set name="flatImages" table="flat_image" inverse="true" lazy="true" cascade="all" fetch="select">
+            <key>
+                <column name="flat_description_id" />
+            </key>
+            <one-to-many class="com.hibernate.FlatImage" />
+        </set>
+    </class>
+</hibernate-mapping>

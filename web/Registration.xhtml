@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Sunshine Group | Sunshine Groups’s vision</title>
+        <link href="#{request.contextPath}/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"></link>
+        <link href="#{request.contextPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+        <!--<link href="#{request.contextPath}/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"></link>-->
+        <link href="#{request.contextPath}/custom/main.css" rel="stylesheet" type="text/css"></link>
+        <style>
+            .registrationFormPart{
+                width: 960px;
+                margin: 50px auto;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div class="fotter_ui">
+            <ui:include src="headerAftersuccess.xhtml"/>
+        </div>
+        <!--Registration area starts here-->
+        <div class="registrationFormPart">
+                <a href="modify.xhtml">Click here to Modify</a>
+        </div>
+        <div class="registrationFormPart">
+            
+        <h:form enctype="multipart/form-data">
+            <h:panelGrid columns="3">
+                <h:outputLabel >Flat Number</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:inputText id="flatNo" value="#{flatInformationMB.flatAddress.flatNo}"/>
+
+                <h:outputLabel >House Number</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:inputText id="houseNo" value="#{flatInformationMB.flatAddress.houseNo}"/>
+
+                <h:outputLabel >Road Number</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:inputText id="roadNo" value="#{flatInformationMB.flatAddress.roadNo}"/>
+
+                <h:outputLabel >Moholla</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:inputText id="moholla" value="#{flatInformationMB.flatAddress.moholla}"/>
+
+                <h:outputLabel >Thana</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:inputText id="thana" value="#{flatInformationMB.flatAddress.thana}"/>
+
+                <h:outputLabel >District</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:inputText id="district" value="#{flatInformationMB.flatAddress.district}"/>
+            </h:panelGrid>
+
+            <h:panelGrid columns="3">
+                <h:outputLabel >Flat Size</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:inputText id="flatSize" value="#{flatInformationMB.flatDescription.flatSize}"/>
+
+                <h:outputLabel >Total Room</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:inputText id="totalRoom" value="#{flatInformationMB.flatDescription.totalRoom}"/>
+
+                <h:outputLabel >Bed Room</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:inputText id="bedRoom" value="#{flatInformationMB.flatDescription.bedRoom}"/>
+
+                <h:outputLabel >Corridor</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:inputText id="corridor" value="#{flatInformationMB.flatDescription.corridor}"/>
+
+                <h:outputLabel >Wash Room</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:inputText id="washRoom" value="#{flatInformationMB.flatDescription.washroom}"/>
+
+                <h:outputLabel >Attached Wash Room</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:inputText id="attacheWashRoom" value="#{flatInformationMB.flatDescription.attachedWashroom}"/>
+
+                <h:outputLabel >Parking</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:selectOneRadio value="#{flatInformationMB.flatDescription.parking}">
+                    <f:selectItem itemValue="Yes" itemLabel="Yes"/>
+                    <f:selectItem itemValue="No" itemLabel="No"/>
+                </h:selectOneRadio>
+
+                <h:outputLabel >Facing</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:selectOneRadio value="#{flatInformationMB.flatDescription.facing}">
+                    <f:selectItem itemValue="North" itemLabel="North"/>
+                    <f:selectItem itemValue="South" itemLabel="South"/>
+                    <f:selectItem itemValue="East" itemLabel="East"/>
+                    <f:selectItem itemValue="West" itemLabel="West"/>
+                </h:selectOneRadio>
+
+                <h:outputLabel >Unit</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:inputText id="unit" value="#{flatInformationMB.flatDescription.unit}"/>
+
+                <h:outputLabel >Land Area</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:inputText id="landArea" value="#{flatInformationMB.flatDescription.landArea}"/>
+
+                <h:outputLabel >Flat Status</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:selectOneRadio value="#{flatInformationMB.flatDescription.flatStatus}">
+                    <f:selectItem itemValue="Complete" itemLabel="Complete"/>
+                    <f:selectItem itemValue="Under Construction" itemLabel="Under Construction"/>
+                </h:selectOneRadio>
+
+            </h:panelGrid>
+            <h:panelGrid>
+                <h:outputLabel >Price Per Square Feet</h:outputLabel>
+                <h:outputLabel >:</h:outputLabel>
+                <h:inputText id="pricePerSquare" value="#{flatInformationMB.flatInformation.pricePerSqure}"/>
+                
+                <h:inputFile value="#{flatInformationMB.img}"/>
+                <f:facet name="footer">
+                    <h:commandButton action="#{flatInformationMB.saveFlatInformation()}" value="Submit">
+                        <f:ajax render="msg" execute="@form"/>
+                    </h:commandButton>
+                    <h:outputLabel value="#{flatInformationMB.msg}" id="msg"/>
+                </f:facet>
+            </h:panelGrid>
+        </h:form>
+        </div>
+        <!--Registration are ends here-->
+        <div class="fotter_ui">
+            <ui:include src="footer.xhtml"/>
+        </div>
+        <script type="text/javascript" src="#{request.contextPath}/bootstrap/js/jquery.min.js"></script>
+        <script type="text/javascript" src="#{request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="#{request.contextPath}/bootstrap/js/bootstrap.js"></script>
+    </h:body>
+</html>
+

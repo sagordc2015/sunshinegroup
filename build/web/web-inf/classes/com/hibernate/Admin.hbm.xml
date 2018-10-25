@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2016 1:10:49 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.Admin" table="admin" catalog="sunshine_group">
+        <id name="adminId" type="java.lang.Integer">
+            <column name="admin_id" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="adminName" type="string">
+            <column name="admin_name" length="45" />
+        </property>
+        <property name="adminEmail" type="string">
+            <column name="admin_email" length="45" />
+        </property>
+        <property name="adminPassword" type="string">
+            <column name="admin_password" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

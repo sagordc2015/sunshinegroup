@@ -1,0 +1,139 @@
+.main{
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider_main{
+    width: 960px;
+    margin: 0 auto;
+}
+.img_height{
+    height: 200px;
+}
+.call_us{
+    float: left;
+    padding-top: 5px;
+    font-size: 20px;
+}
+.header_ul{
+    float: left;
+}
+.header_right{
+    float: right;
+}
+.header_area{
+    margin: 50px 0;
+}
+
+.header_ul ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.header_ul ul li{
+    float: left;
+}
+.header_ul ul li a {
+  background-color: #333333;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 21px;
+  margin: 5px;
+  padding: 12px 14px;
+}
+
+.header_ul li a:hover{
+    background-color: #B2B2B2;
+    color: #555393;
+}
+
+.menu_area{
+    background-color: #555393;
+}
+.menu_area ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu_area ul li{
+    float: left;
+    padding: 5px 10px;
+}
+.menu_area ul li a{
+    color: #ffffff;
+    border-right: 1px solid #fff;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.menu_area ul li a:hover{
+    color: #000;
+}
+
+
+.full_width_menu{
+    background-color: #555393;
+    padding: 30px 0;
+}
+
+.footer{
+    background-color: #303030;
+    padding: 30px 0;
+}
+.footer a{
+    color: #999999;
+    text-decoration: none;
+}
+.footer p{
+    color: #fff;
+}
+.footer_left_content{
+    overflow: hidden;
+}
+.footer_middle_content{
+    overflow: hidden;
+}
+.footer_left_content ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.footer_middle_content ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.footer_left_content ul li{
+    float: left;
+    padding: 5px;
+}
+.footer_middle_content ul li{
+    float: left;
+    padding: 5px;
+}
+.footer_content_line hr{
+    margin: 2px 0;
+}
+.footer_left_logo {
+  background-color: #fff;
+  border-radius: 9px;
+  margin-bottom: 17px;
+  padding: 10px;
+  width: 224px;
+}
+.footer p{
+    font-size: 22px;
+}
+.footer_bottom{
+    background-color: #322F83;
+    padding: 30px 0;
+    color: #fff;
+    font-size: 15px;
+}
+.footer_bottom_left{
+    float: left;
+}
+.footer_bottom_right{
+    float: right;
+}

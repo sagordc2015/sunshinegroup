@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2016 1:10:49 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.FlatInformation" table="flat_information" catalog="sunshine_group">
+        <id name="flatId" type="java.lang.Integer">
+            <column name="flat_id" />
+            <generator class="identity"></generator>
+        </id>
+        <many-to-one name="flatDescription" class="com.hibernate.FlatDescription" cascade="all" fetch="select">
+            <column name="flat_description_id" />
+        </many-to-one>
+        <many-to-one name="flatAddress" class="com.hibernate.FlatAddress" cascade="all" fetch="select">
+            <column name="address_id" />
+        </many-to-one>
+        <property name="pricePerSqure" type="java.lang.Double">
+            <column name="price_per_squre" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

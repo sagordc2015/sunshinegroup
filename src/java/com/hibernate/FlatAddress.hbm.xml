@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2016 1:10:49 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.FlatAddress" table="flat_address" catalog="sunshine_group">
+        <id name="addressId" type="java.lang.Integer">
+            <column name="address_id" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="flatNo" type="string">
+            <column name="flat_no" length="45" />
+        </property>
+        <property name="houseNo" type="string">
+            <column name="house_no" length="45" />
+        </property>
+        <property name="roadNo" type="string">
+            <column name="road_no" length="45" />
+        </property>
+        <property name="moholla" type="string">
+            <column name="moholla" length="45" />
+        </property>
+        <property name="thana" type="string">
+            <column name="thana" length="45" />
+        </property>
+        <property name="district" type="string">
+            <column name="district" length="45" />
+        </property>
+        <set name="flatInformations" table="flat_information" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="address_id" />
+            </key>
+            <one-to-many class="com.hibernate.FlatInformation" />
+        </set>
+    </class>
+</hibernate-mapping>

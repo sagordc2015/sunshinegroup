@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Sunshine Group | Sunshine Groups’s vision</title>
+        <link href="#{request.contextPath}/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"></link>
+        <link href="#{request.contextPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+        <!--<link href="#{request.contextPath}/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"></link>-->
+        <link href="#{request.contextPath}/custom/main.css" rel="stylesheet" type="text/css"></link>
+        <style>
+            .aboutContent{
+                border: 1px solid #ededed;
+                border-radius: 15px;
+                padding: 10px;
+                width: 960px;
+                margin: 10px auto;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div class="templateBeforeLoginHeader">
+            <ui:include src="header.xhtml"/>
+        </div>
+        
+        <div class="main">
+            <ui:include src="slider.xhtml"/>
+        </div>
+        
+        <div class="aboutContent">
+            Create user to Rupayan Group 
+        </div>
+        
+        <div class="aboutContent">
+            Welcome to Rupayan Group. Established in 1989, Rupayan Group has been dedicated to doing business differently and innovatively. Our diverse businesses span from real estate development, hotels, garments, shippping and much more. Our maiden company, Rupayan Art View, is a pioneer in the field of outdoor advertising and our flagship company Rupayan Housing Estate is a market leader in real estate development and construction.
+
+At Rupayan Group, we believe in innovation, reliable products and services; talented people and a responsible approach to business. Our values and commitment to excellence makes us one of the largest and fastest growing companies in Bangladesh.
+
+Mission
+
+At Rupayan Group we have one objective – to devote our talent, technology and time to creating superior products and services that make everyday lives better and contributes to a better society.
+
+Vision
+
+Rupayan Groups’s vision is to provide excellent product and services of superior quality and value that will enhance the lives of consumers today and for generations to come.
+
+Values
+
+Rupayan Group believes that good ethics is the foundation for good business. We believe in showing fairness and respect to our clients, partners, society and environment.
+        </div>
+        <div class="fotter_ui">
+            <ui:include src="footer.xhtml"/>
+        </div>
+      
+        <!-- script file here -->
+        <!--<h:outputScript library="js" name="jquery.min.js" />-->
+        <!--<h:outputScript library="bootstrap/js" name="bootstrap.min.js" />-->
+        <script type="text/javascript" src="#{request.contextPath}/bootstrap/js/jquery.min.js"></script>
+        <script type="text/javascript" src="#{request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="#{request.contextPath}/bootstrap/js/bootstrap.js"></script>
+    </h:body>
+</html>
+

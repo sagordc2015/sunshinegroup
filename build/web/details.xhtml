@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+
+        <style>
+            .mainDetails{
+                width: 736px;
+                margin: 0 auto;
+            }
+            .mainDetails img{
+                height: 400px;
+                width: 700px;
+                border-radius: 10px;
+            }
+            .maindetails_content{
+                border: 1px solid #7598b5;
+                border-radius: 8px;
+                padding: 10px;
+                width: 702px;
+                margin-top: 20px;
+            }
+            .fotter_details{
+                margin-top: 30px;
+            }
+            .header_details{
+                margin-bottom: 20px;
+            }
+            .mapSet{
+                width: 735px;
+                margin: 9px auto;
+                padding-right: 30px;
+            }
+            .mapSetSet{
+                width: 700px;
+                padding: 5px;
+                border-radius: 5px;
+                border: 2px solid #000;
+            }
+        </style>
+
+    </h:head>
+    <h:body onload="myMap()">
+        <div class="header_details">
+            <ui:include src="header.xhtml"/>
+        </div>
+        <div class="mainDetails">
+            <h:form>
+                <img src="resources/images/#{imageDao.flatInformation.flatImage.image}"></img>
+                <div class="maindetails_content">
+                    <h:panelGrid columns="3">
+                        <h:outputLabel >Flat ID</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText value="#{imageDao.flatInformation.flatId}"/>
+
+                        <h:outputLabel >Flat Number</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText id="flatNo" value="#{imageDao.flatInformation.flatAddress.flatNo}"/>
+
+                        <h:outputLabel >House Number</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText id="houseNo" value="#{imageDao.flatInformation.flatAddress.houseNo}"/>
+
+                        <h:outputLabel >Road Number</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText id="roadNo" value="#{imageDao.flatInformation.flatAddress.roadNo}"/>
+
+                        <h:outputLabel >Moholla</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText id="moholla" value="#{imageDao.flatInformation.flatAddress.moholla}"/>
+
+                        <h:outputLabel >Thana</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText id="thana" value="#{imageDao.flatInformation.flatAddress.thana}"/>
+
+                        <h:outputLabel >District</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText id="district" value="#{imageDao.flatInformation.flatAddress.district}"/>
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="3">
+                        <h:outputLabel >Flat Size</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText id="flatSize" value="#{imageDao.flatInformation.flatDescription.flatSize}"/>
+
+                        <h:outputLabel >Total Room</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText id="totalRoom" value="#{imageDao.flatInformation.flatDescription.totalRoom}"/>
+
+                        <h:outputLabel >Bed Room</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText id="bedRoom" value="#{imageDao.flatInformation.flatDescription.bedRoom}"/>
+
+                        <h:outputLabel >Corridor</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText id="corridor" value="#{imageDao.flatInformation.flatDescription.corridor}"/>
+
+                        <h:outputLabel >Wash Room</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText id="washRoom" value="#{imageDao.flatInformation.flatDescription.washroom}"/>
+
+                        <h:outputLabel >Attached Wash Room</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText id="attacheWashRoom" value="#{imageDao.flatInformation.flatDescription.attachedWashroom}"/>
+
+                        <h:outputLabel >Parking</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText value="#{imageDao.flatInformation.flatDescription.parking}"/>
+
+                        <h:outputLabel >Facing</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText value="#{imageDao.flatInformation.flatDescription.facing}"/>
+
+                        <h:outputLabel >Unit</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText id="unit" value="#{imageDao.flatInformation.flatDescription.unit}"/>
+
+                        <h:outputLabel >Land Area</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText id="landArea" value="#{imageDao.flatInformation.flatDescription.landArea}"/>
+
+                        <h:outputLabel >Flat Status</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText value="#{imageDao.flatInformation.flatDescription.flatStatus}"/>
+                    </h:panelGrid>
+                    <h:panelGrid columns="3">
+                        <h:outputLabel >Price Per Square Feet</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText id="pricePerSquare" value="#{imageDao.flatInformation.pricePerSqure}"/>
+
+                        <h:outputLabel >Total Price</h:outputLabel>
+                        <h:outputLabel >:</h:outputLabel>
+                        <h:outputText value="#{imageDao.flatInformation.pricePerSqure * imageDao.flatInformation.flatDescription.flatSize}"/>
+                    </h:panelGrid>
+                </div>
+            </h:form>
+        </div>
+        
+        <div class="mapSet">
+            <div class="mapSetSet">
+                <div id="map" style="width: 100%; height: 500px; " ></div>
+                <script>
+                    function myMap() {
+                        var mapCanvas = document.getElementById("map");
+                        var myCenter = new google.maps.LatLng(#{imageDao.flatInformation.lat}, #{imageDao.flatInformation.lon});
+                        var mapOptions = {center: myCenter, zoom: 18};
+                        var map = new google.maps.Map(mapCanvas, mapOptions);
+                        var marker = new google.maps.Marker({
+                            position: myCenter,
+                            animation: google.maps.Animation.BOUNCE
+                        });
+                        marker.setMap(map);
+                        var infowindow = new google.maps.InfoWindow({
+                            content: "Hello World!"
+                        });
+                        infowindow.open(map, marker);
+                    }
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpJU3NubVaL6GbPv1xg_55aHZrb3PczyQ"></script>
+            </div>
+        </div>
+        <div class="fotter_details">
+            <ui:include src="footer.xhtml"/>
+        </div>
+    </h:body>
+</html>
+

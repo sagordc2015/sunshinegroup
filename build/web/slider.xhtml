@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="#{request.contextPath}/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"></link>
+        <link href="#{request.contextPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+        <link href="#{request.contextPath}/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"></link>
+        <link href="#{request.contextPath}/custom/main.css" rel="stylesheet" type="text/css"></link>
+        
+        <style>
+        /* jssor slider bullet navigator skin 05 css */
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+        }
+        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 16px;
+            height: 16px;
+            background: url('#{request.contextPath}/jssr/img/b05.png') no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .jssorb05 div { background-position: -7px -7px; }
+        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+        .jssorb05 .av { background-position: -67px -7px; }
+        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+        
+        /* jssor slider arrow navigator skin 22 css */
+        /*
+        .jssora22l                  (normal)
+        .jssora22r                  (normal)
+        .jssora22l:hover            (normal mouseover)
+        .jssora22r:hover            (normal mouseover)
+        .jssora22l.jssora22ldn      (mousedown)
+        .jssora22r.jssora22rdn      (mousedown)
+        */
+        .jssora22l, .jssora22r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 40px;
+            height: 58px;
+            cursor: pointer;
+            background: url('#{request.contextPath}/jssr/img/a22.png') center center no-repeat;
+            overflow: hidden;
+        }
+        .jssora22l { background-position: -10px -31px; }
+        .jssora22r { background-position: -70px -31px; }
+        .jssora22l:hover { background-position: -130px -31px; }
+        .jssora22r:hover { background-position: -190px -31px; }
+        .jssora22l.jssora22ldn { background-position: -250px -31px; }
+        .jssora22r.jssora22rdn { background-position: -310px -31px; }
+    </style>
+        
+        
+    </h:head>
+    <h:body>
+        <div class="slider_main">
+            <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 980px; height: 380px; overflow: hidden; visibility: hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+            <div style="position:absolute;display:block;background:url('#{request.contextPath}/jssr/img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 980px; height: 380px; overflow: hidden;">
+            <div data-b="0" data-p="170.00" data-po="80% 55%" style="display: none;">
+                <img data-u="image" src="#{request.contextPath}/jssr/img/001.jpg" />
+                <div data-u="caption" data-t="0" style="position: absolute; top: 25px; left: 277px; width: 500px; height: 30px; background-color: rgba(235,81,0,0.5); font-size: 20px; color: #ffffff; line-height: 30px; text-align: center;">We are market leaders in real estate, shipping,</div>
+                <div data-u="caption" data-t="1" style="position: absolute; top: 600px; left: -100px; width: 350px; height: 30px; background-color: rgba(235,81,0,0.5); font-size: 15px; color: #ffffff; line-height: 30px; text-align: center;">garments and advertising industries in Bangladesh</div>
+                <div data-u="caption" data-t="2" style="position: absolute; top: -50px; left: 400px; width: 80px; height: 40px; background-color: rgba(0,0,0,0.5); font-size: 16px; color: #ffffff; line-height: 40px; text-align: center;">Comes</div>
+                <div data-u="caption" data-t="3" style="position: absolute; top: 100px; left: 400px; width: 80px; height: 40px; background-color: rgba(0,0,0,0.5); font-size: 16px; color: #ffffff; line-height: 40px; text-align: center;">with</div>
+                <div data-u="caption" data-t="4" data-3d="1" style="position: absolute; top: 200px; left: 550px; width: 200px; height: 100px; background-color: rgba(235,81,0,0.5); font-size: 24px; color: #ffffff; line-height: 100px; text-align: center;">Low Price</div>
+                <div data-u="caption" data-t="5" data-3d="1" style="position: absolute; top: 200px; left: 550px; width: 200px; height: 100px; background-color: rgba(235,81,0,0.5); font-size: 24px; color: #ffffff; line-height: 100px; text-align: center;">Suitable location</div>
+                <div data-u="caption" data-t="6" data-3d="1" style="position: absolute; top: 200px; left: 550px; width: 200px; height: 100px; background-color: rgba(235,81,0,0.5); font-size: 24px; color: #ffffff; line-height: 100px; text-align: center;">Well Interior design</div>
+                <div data-u="caption" data-t="7" data-3d="1" style="position: absolute; top: 200px; left: 550px; width: 200px; height: 100px; background-color: rgba(235,81,0,0.5); font-size: 24px; color: #ffffff; line-height: 100px; text-align: center;">Complete Flat</div>
+                <div data-u="caption" data-t="8" data-3d="1" style="position: absolute; top: 200px; left: 550px; width: 200px; height: 100px; background-color: rgba(235,81,0,0.5); font-size: 24px; color: #ffffff; line-height: 100px; text-align: center;">Hassle free</div>
+                
+            </div>
+            <div data-b="1" data-p="170.00" style="display: none;">
+                <img data-u="image" src="#{request.contextPath}/jssr/img/002.jpg" />
+                <div data-u="caption" data-t="10" style="position: absolute; top: 300px; left: 20px; width: 500px; height: 30px; background-color: rgba(235,81,0,0.5); font-size: 20px; color: #ffffff; line-height: 30px; text-align: center;">Sunshine Group is the leading realstate agent in Bangladesh </div>
+                <div data-u="caption" data-t="11" style="position: absolute; top: 120px; left: 700px; width: 200px; height: 90px; background-color: rgba(0,0,0,0.5); font-size: 16px; color: #ffffff; line-height: 28px; text-align: center; padding: 2px; box-sizing: border-box;">School<br />
+                                           Super Shop<br />
+                                            Open Field
+                </div>
+                <div data-u="caption" data-t="12" style="position: absolute; top: -100px; left: 720px; width: 160px; height: 90px; background-color: rgba(235,81,0,0.7); font-size: 20px; color: #ffffff; line-height: 90px; text-align: center;">Parking</div>
+                <div style="position: absolute; top: 40px; left: 300px; width: 400px; height: 200px; overflow: hidden;">
+                    
+                </div>
+                <a href="" style="display: block; position: absolute; top: 300px; left: 600px; width: 300px; height: 30px; background-color: rgba(235,81,0,0.5); font-size: 20px; color: #ffffff; line-height: 30px; text-align: center;">100+ ready flat</a>
+            </div>
+            <div data-b="2" data-p="170.00" style="display: none;">
+                <img data-u="image" src="#{request.contextPath}/jssr/img/04.jpg" />
+                <div data-u="caption" data-t="17" style="position: absolute; top: 310px; left: 50px; width: 500px; height: 30px; background-color: rgba(235,81,0,0.5); font-size: 20px; color: #ffffff; line-height: 30px; text-align: center;">Country's best property developer</div>
+                <div data-u="caption" data-t="18" style="position: absolute; top: 40px; left: 640px; width: 300px; height: 300px; background-color: rgba(40,177,255,0.6); overflow: hidden;">
+                    <div style="position: absolute; top: 0px; left: 0px; width: 240px; height: 80px; overflow: hidden;">
+                        <div style="position: absolute; top: 0px; left: 20px; width: 200px; height: 50px; font-size: 24px; line-height: 50px;">Finance 
+                            
+                        </div>
+                        <div data-u="caption" data-t="19" style="position: absolute; top: 40px; left: -200px; width: 200px; height: 40px; font-size: 24px; line-height: 40px; text-align: right;">Facilities
+                            
+                        </div>
+                    </div>
+                </div>
+                <div data-u="caption" data-t="20" data-3d="1" style="position: absolute; top: 140px; left: 690px; width: 200px; height: 200px;">
+                    <div data-u="caption" data-t="21" style="position: absolute; top: 0px; left: 0px; width: 200px; height: 200px;">
+                        <img data-u="caption" data-t="22" style="position: absolute; top: 85px; left: 85px; width: 30px; height: 30px;" src="#{request.contextPath}/jssr/img/house-1.png" />
+                        <img data-u="caption" data-t="23" style="position: absolute; top: 85px; left: 85px; width: 30px; height: 30px;" src="#{request.contextPath}/jssr/img/house-2.png" />
+                        <img data-u="caption" data-t="24" style="position: absolute; top: 85px; left: 85px; width: 30px; height: 30px;" src="#{request.contextPath}/jssr/img/houses.png" />
+                        <img data-u="caption" data-t="25" style="position: absolute; top: 85px; left: 85px; width: 30px; height: 30px;" src="#{request.contextPath}/jssr/img/house.png" />
+                        <img data-u="caption" data-t="26" style="position: absolute; top: 85px; left: 85px; width: 30px; height: 30px;" src="#{request.contextPath}/jssr/img/key.png" />
+                    </div>
+                </div>
+                <div data-u="caption" data-t="27" style="position: absolute; top: 20px; left: 20px; width: 240px; height: 80px; background-color: rgba(0,0,124,0.3); overflow: hidden;">
+                    <div style="position: absolute; top: 0px; left: 20px; width: 200px; height: 50px; font-size: 24px; color: #ffffff; line-height: 50px;">Easy Loan
+                        
+                    </div>
+                    <div data-u="caption" data-t="28" style="position: absolute; top: 40px; left: -200px; width: 200px; height: 40px; font-size: 24px; color: #ffffff; line-height: 40px; text-align: right;">Facility</div>
+                </div>
+                <div data-u="caption" data-t="29" style="position: absolute; top: 150px; left: 250px; width: 200px; height: 100px; background-color: rgba(235,81,0,0.7); font-size: 24px; color: #ffffff; line-height: 100px; text-align: center;">Lanka Bangla</div>
+                <div data-u="caption" data-t="30" style="position: absolute; top: 150px; left: 250px; width: 200px; height: 100px; background-color: rgba(235,81,0,0.7); font-size: 24px; color: #ffffff; line-height: 100px; text-align: center;">DBH</div>
+                <div data-u="caption" data-t="31" style="position: absolute; top: 150px; left: 250px; width: 200px; height: 100px; background-color: rgba(235,81,0,0.7); font-size: 24px; color: #ffffff; line-height: 100px; text-align: center;">Midas Finance</div>
+            </div>
+            <a data-u="any" href="http://www.jssor.com" style="display:none">Introduction Slider</a>
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+            <!-- bullet navigator item prototype -->
+            <div data-u="prototype" style="width:16px;height:16px;"></div>
+        </div>
+        <!-- Arrow Navigator -->
+        <span data-u="arrowleft" class="jssora22l" style="top:0px;left:10px;width:40px;height:58px;" data-autocenter="2"></span>
+        <span data-u="arrowright" class="jssora22r" style="top:0px;right:10px;width:40px;height:58px;" data-autocenter="2"></span>
+    </div>
+        </div>
+        
+        <script type="text/javascript" src="#{request.contextPath}/bootstrap/js/jquery.min.js"></script>
+          <script type="text/javascript" src="#{request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
+          <script type="text/javascript" src="#{request.contextPath}/bootstrap/js/koi.js"></script>
+          <script type="text/javascript" src="#{request.contextPath}/bootstrap/js/jssor.slider-21.1.6.mini.js"></script>
+          <!--Slider jssor start here-->
+          
+    </h:body>
+</html>
+

@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Sunshine Group | Sunshine Groups’s vision</title>
+        <link href="#{request.contextPath}/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"></link>
+        <link href="#{request.contextPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+        <!--<link href="#{request.contextPath}/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"></link>-->
+        <link href="#{request.contextPath}/custom/main.css" rel="stylesheet" type="text/css"></link>
+        <style>
+            .aboutContent{
+                border: 1px solid #ededed;
+                border-radius: 15px;
+                padding: 10px;
+                width: 960px;
+                margin: 10px auto;
+                overflow: hidden;
+            }
+            .divFloat {
+                border: 1px solid #a4acba;
+                border-radius: 10px;
+                float: left;
+                margin: 8px;
+                padding: 11px 51px;
+                width: 300px;
+            }
+            .forImage img {
+                width: 192px;
+                height: 146px;
+            }
+            .forData ul{
+                margin: 0;
+                padding: 0;
+            }
+            .main_show_class{
+                width: 960px;
+                margin: 0px 0 0 3px
+            }
+            .forData ul{
+                margin: 0;
+                padding: 0;
+
+            }
+            .divFloat ul {
+                margin: 0;
+                padding: 0px 0px 0px 11px;
+                text-align: left;
+            }
+
+        </style>
+    </h:head>
+    <h:body>
+        <div class="templateBeforeLoginHeader">
+            <ui:include src="headerFromSearch.xhtml"/>
+        </div>
+
+        <div class="main">
+            <ui:include src="slider.xhtml"/>
+        </div>
+
+        <div class="aboutContent">
+            <div style="width: 100%; float: left;">
+                <h:form id="searchForm" >
+                    <h:outputLabel value="Mahalla : "/>  
+                    <h:selectOneMenu value="#{imageDao.selectedMahallaName}" id="mahalla">
+                        <f:selectItem itemLabel="All" itemValue="All"/>
+                        <f:selectItems value="#{imageDao.mahallaList}"/>
+                    </h:selectOneMenu><br/>
+
+                    <h:outputLabel value="Flat Size (Sqft): "/>
+                    <h:selectOneRadio value="#{imageDao.selectedFlatSize}" id="size">
+                        <f:selectItem itemLabel="All" itemValue="a"/>
+                        <f:selectItem itemLabel="Less Than 1000" itemValue="s"/>
+                        <f:selectItem itemLabel="1000-1200" itemValue="m"/>
+                        <f:selectItem itemLabel="1200-1500" itemValue="b"/>
+                        <f:selectItem itemLabel="More Than 1500" itemValue="e"/>
+                    </h:selectOneRadio><br/>
+
+                    <h:outputLabel value="Price Per SqFt: "/>
+                    <h:selectOneRadio value="#{imageDao.selectedFlatPrice}" id="price">
+                        <f:selectItem itemLabel="All" itemValue="a"/>
+                        <f:selectItem itemLabel="Less Than 2000 tk" itemValue="s"/>
+                        <f:selectItem itemLabel="2000-3000 tk" itemValue="m"/>
+                        <f:selectItem itemLabel="3000-4000 tk" itemValue="b"/>
+                        <f:selectItem itemLabel="More Than 4000 tk" itemValue="e"/>
+                    </h:selectOneRadio><br/>
+                    <h:commandButton value="Search" actionListener="#{imageDao.findFlatInformationByQuary()}" >
+                        <f:ajax render="show" execute="@form"/>
+                    </h:commandButton>
+                </h:form>
+            </div>
+        </div>
+
+        <div class="aboutContent">
+            <div style="main_show_class">
+                <h:panelGroup id="show">   
+                    <center>
+                        <h:form>
+                            <c:forEach items="#{imageDao.flatList}" var="mg">
+                                <div class="divFloat">
+                                    <div class="forImage">
+                                        <img src="resources/images/#{mg.flatImage.image}" alt=""></img>
+                                    </div>
+                                    <div class="forData">
+                                        <ul>
+                                            <li>Total Room# #{mg.flatDescription.totalRoom}, Bed Room# #{mg.flatDescription.bedRoom}</li>
+                                            <li>Location : #{mg.flatAddress.moholla}</li>
+                                            <li>Size : #{mg.flatDescription.flatSize} Square</li>
+                                            <li>Price : #{mg.pricePerSqure} Per Square</li>
+                                            <h:commandLink value="More...." action="details.xhtml" actionListener="#{imageDao.findLatLon()}">
+                                                <f:setPropertyActionListener value="#{mg}" target="#{imageDao.flatInformation}"/>
+                                            </h:commandLink>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </c:forEach>
+                        </h:form>    
+                    </center>
+                </h:panelGroup>
+            </div>
+        </div>
+
+        <div class="fotter_ui">
+            <ui:include src="footer.xhtml"/>
+        </div>
+
+        <!-- script file here -->
+        <!--<h:outputScript library="js" name="jquery.min.js" />-->
+        <!--<h:outputScript library="bootstrap/js" name="bootstrap.min.js" />-->
+        <script type="text/javascript" src="#{request.contextPath}/bootstrap/js/jquery.min.js"></script>
+        <script type="text/javascript" src="#{request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="#{request.contextPath}/bootstrap/js/bootstrap.js"></script>
+    </h:body>
+</html>
+

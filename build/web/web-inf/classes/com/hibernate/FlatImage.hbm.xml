@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 3, 2016 1:10:49 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.hibernate.FlatImage" table="flat_image" catalog="sunshine_group">
+        <id name="imageId" type="java.lang.Integer">
+            <column name="image_id" />
+            <generator class="identity"></generator>
+        </id>
+        <many-to-one name="flatDescription" class="com.hibernate.FlatDescription" cascade="all" fetch="select">
+            <column name="flat_description_id" />
+        </many-to-one>
+        <property name="image" type="string">
+            <column name="image" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

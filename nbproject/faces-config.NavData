@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="ui/info2.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="ui/career.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="showForMain.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="ui/contactUS.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="show.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="ui/report.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="ui/temlateAfterLogin.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="ui/newsEvents.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="ui/createUser.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="ui/details.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="ui/success.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="index.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="ui/info.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="ui/templateBeforeLogin.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="ui/slider.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="ui/footer.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="ui/headerAftersuccess.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="Registration.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="show_1.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="ui/ourCompany.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="ui/searchPage.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="ui/feedback.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="details.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="ui/header.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="ui/about.xhtml" x="150" y="300" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>
